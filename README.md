@@ -1,7 +1,5 @@
 <h1 align="center">Socket Chat</h1>
 
----
-
 <p align="center">
   <a href="#sobre">Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#preview">Preview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -36,8 +34,8 @@ Este projeto foi desenvolvido usando as seguintes tecnologias:
 Você vai precisar da [JDK 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) ou superior instalada em seu computador para poder compilar.
 
 ```bash
-git clone https://github.com/eric-souzams/java-chat.git
-$ cd java-chat
+git clone https://github.com/eric-souzams/socket-chat-java.git
+$ cd socket-chat-java
 
 Após fazer a build dos arquivo, inicializar o servidor executando o StartServer.
 Após inicializar e ligar o servidor, inicializar o client executando o StartClient.
