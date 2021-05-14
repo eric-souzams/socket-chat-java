@@ -1,4 +1,4 @@
-package server.model.service;
+package server.controller;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 import client.model.entities.Message;
 import server.view.ServerScreen;
 
-public class Service extends Thread {
+public class MessageController extends Thread {
     private Map<String, ObjectOutputStream> onlineUsers = new HashMap<>();
     private ServerSocket server;
     private Socket client;
@@ -22,7 +22,7 @@ public class Service extends Thread {
     private int door = 9457;
     
     //classe responsavel por iniciar o socket
-    public Service(ServerScreen screen){
+    public MessageController(ServerScreen screen){
         this.screen = screen;
         try{
             //instancia o servidor
@@ -42,7 +42,7 @@ public class Service extends Thread {
                 //quando eu chamo o start, basicamente estou chamando o run()
                 this.serverThread.start();
             } catch (IOException ex) {
-                Logger.getLogger(Service.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MessageController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -52,7 +52,7 @@ public class Service extends Thread {
             //fecha o servidor
             this.server.close();
         } catch (IOException ex) {
-            Logger.getLogger(Service.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MessageController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -69,7 +69,7 @@ public class Service extends Thread {
                     //writeObject é responsável por escrever o estado do objeto para sua classe 
                     //particular para que o método readObject correspondente possa restaurá-lo. 
                 } catch (IOException ex) {
-                    Logger.getLogger(Service.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(MessageController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
@@ -86,7 +86,7 @@ public class Service extends Thread {
               send = new ObjectOutputStream(client.getOutputStream());
               receive = new ObjectInputStream(client.getInputStream());
             } catch (IOException ex) {
-                Logger.getLogger(Service.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MessageController.class.getName()).log(Level.SEVERE, null, ex);
             } 
         }
         
@@ -114,8 +114,8 @@ public class Service extends Thread {
                     }
                 }
             } catch (IOException | ClassNotFoundException ex) {
-                Logger.getLogger(Service.class.getName()).log(Level.SEVERE, null, ex);
-            }
+                System.out.println("Client "+ Thread.currentThread().getName() + " foi encerrado");
+            } 
         }
     }
 }

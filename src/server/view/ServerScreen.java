@@ -1,13 +1,13 @@
 package server.view;
 
 import java.text.SimpleDateFormat;
-import server.model.service.Service;
+import server.controller.MessageController;
 
 public class ServerScreen extends javax.swing.JFrame {
     
     private boolean status = false;
     private SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
-    private Service serverServices;
+    private MessageController serverServices;
     private Thread server;
     
     public ServerScreen() {
@@ -143,7 +143,7 @@ public class ServerScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_turnOnTurnOffButtonActionPerformed
     
     private void startServer() {
-       serverServices = new Service(this); //instancia os services
+       serverServices = new MessageController(this); //instancia os services
        
        //Instancia e inicia uma thread pro servidor rodar
        server = new Thread() {

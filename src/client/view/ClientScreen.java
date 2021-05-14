@@ -1,7 +1,7 @@
 package client.view;
 
 import client.model.entities.Message;
-import client.model.service.Service;
+import client.controller.MessageController;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -25,7 +25,7 @@ public class ClientScreen extends JFrame {
     private JFileChooser fileChooser;
     private Socket client;
     private Message message;
-    private Service clientServices;
+    private MessageController clientServices;
     private Thread clientThread;
     
     private String username = "";
@@ -301,7 +301,7 @@ public class ClientScreen extends JFrame {
     
     private void makeConnection() {
         //instancia os serviços do client
-        this.clientServices = new Service();
+        this.clientServices = new MessageController();
         //tenta conectar com o servidor
         try {
             this.client = this.clientServices.connectToServer();

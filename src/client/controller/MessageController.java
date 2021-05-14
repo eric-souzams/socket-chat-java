@@ -1,11 +1,11 @@
-package client.model.service;
+package client.controller;
 
 import client.model.entities.Message;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
-public class Service {
+public class MessageController {
     
     private Socket client;
     private ObjectOutputStream send;
