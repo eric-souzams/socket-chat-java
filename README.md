@@ -17,6 +17,7 @@ A ferramenta terá que ser utilizada no seguinte caso: a Secretaria de Estado do
 
 ## Preview
 <p align="center">
+    <img src="./public/screens/server1.png" />
     <img src="./public/screens/client1.png" />
     <img src="./public/screens/client2.png" />
     <img src="./public/screens/client3.png" />
